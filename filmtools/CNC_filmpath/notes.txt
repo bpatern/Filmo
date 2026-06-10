@@ -1,0 +1,4 @@
+exploring using a high precision XYZ table for engraving onto film 
+since the resolution + tip size is extremely high i will first be 
+playing around with milling out a channel with perforations for the film to sit
+so that i have a jig that i can lay out graphics with
