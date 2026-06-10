@@ -22,7 +22,7 @@
 enum direction {
     forward,
     reverse,
-    stop,
+    _stop,
     N_A
 };
 
@@ -30,6 +30,7 @@ enum direction {
 class control{
     public:
     control();
+
     private:
 };
 

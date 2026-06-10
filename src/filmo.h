@@ -36,6 +36,7 @@ freeRTOSused = 0;
 #ifdef filmotype_motor 
 #include "communication/commander_recognized.h"
 #include "communication/commander.h"
+#include "general/dial.h"
 #endif
 
 #ifdef filmotype_logic
@@ -58,7 +59,8 @@ freeRTOSused = 0;
 #endif
 
 #ifdef filmotype_projectorRelay
-#include "general/switchNbutton.h"
+#include "general/switch.h"
+#include "communication/wireless.h"
 #endif
 
 

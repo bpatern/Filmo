@@ -27,7 +27,7 @@ direction playbackControl::readDirection(direction dir)
         {
             if (checkPin(_runPin) == 0)
             {
-            _internalDirection = stop;
+            _internalDirection = _stop;
             } else if (checkPin(_runPin) == 1)
             {
                 if (checkPin(_revPin) != 1)
@@ -48,7 +48,7 @@ direction playbackControl::readDirection(direction dir)
         {
             if (checkPin(_runPin) == 0 && checkPin(_revPin) == 0)
             {
-            _internalDirection = stop;
+            _internalDirection = _stop;
             } else
             {
                 if (checkPin(_runPin) == 1)

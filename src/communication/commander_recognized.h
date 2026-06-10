@@ -1,19 +1,6 @@
-#define confirm '%'
-
-#define lampon 'A'
-#define lampoff 'B'
-
-#define ignore_controlswitch '#'
-#define mcopy 'm'
-
-#define forward_continuous 'F'
-#define reverse_continuous 'R'
-#define stop 'X'
-
-#define forward_single 'f'
-#define reverse_single 'r'
-#define forward_single_opticalprinter 'g'
-#define reverse_single_opticalprinter 'h'
+// #ifndef commands_h
+#include "commands.h"
+// #endif
 
 inline bool commandLibrary(char device, char recvd, uint16_t argument = -1)
 {
@@ -25,18 +12,19 @@ inline bool commandLibrary(char device, char recvd, uint16_t argument = -1)
         {
             ESP_LOGI("serial", "LAMP ON");
             constantLED = 1;
-            ledSwitch = 1;
-            uart_write_bytes(UART_NUM_2, sendConfirmationResponse(lampon), 64);
+            opticalPrinter = 1;
+            // uart_write_bytes(UART_NUM_2, sendConfirmationResponse(lampon), 64);
         }
         else if (recvd == lampoff)
         {
             ESP_LOGI("serial", "LAMP OFF");
             constantLED = 0;
-                        ledSwitch = 0;
+                        opticalPrinter = 0;
+
 
 
             send_LEDC('x');
-            uart_write_bytes(UART_NUM_2, sendConfirmationResponse(lampoff), 64);
+            // uart_write_bytes(UART_NUM_2, sendConfirmationResponse(lampoff), 64);
 
         } else if (recvd == forward_single)
         {
@@ -131,7 +119,7 @@ inline bool commandLibrary(char device, char recvd, uint16_t argument = -1)
 }
 
 inline const char * sendConfirmationResponse(char message) {
-     static char append[1];
+     static char append[16];
      append[0] = confirm;
      append[1] = message;
     static const char *msg = append;

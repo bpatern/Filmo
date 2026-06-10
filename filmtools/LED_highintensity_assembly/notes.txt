@@ -1,0 +1,37 @@
+this is an LED assembly for motion picture projection
+
+i am using a high intensity led with a 22amp constant current buck converter, and instead of using
+the current control settings on the buck I am replacing the PWM signal from the onboard microcontroller
+with that of a digital multiblade shutter emulation. 
+
+this driver has a very nice slew characteristic because of some of the filters that get the PWM signal ready to be listened to by
+the buck driver chip. 
+
+if you are not interested in driving an led with this sort of stroboscopic action you may use the driver out of the box using the 
+external controller to dim the bulb (you may also talk to it VIA serial if you prefer to forgo the LCD readout.) you will end up with 
+an image with a higher intensity and throw than a traditional 1200w projector bulb.
+
+this is the heatsink i used -- 50mm x 50mm
+https://www.amazon.com/Heatsink-50x50x20mm-Electronic-tec1-12705-Solutions/dp/B089Q1QNLJ/ref=sr_1_2_pp?crid=2P5JFFBEC5374&dib=eyJ2IjoiMSJ9.honmW2LpS4PVk1IZnWKZeS6z3vlyUqENaq4sITfZ0AqsKDbEX-q5pKlwviRqp_InXh2XhpqnA9OfVE4Cz6xZBVn-f3dWY_RPw_MwgJeZmREgkaNQYEij2z3gWFghnlta2jS5_-NuqsoAoFcAo9QJuSQcnii6J8JcEGjOPUEV8hA7fTQ_PBUmOgKXuIbc7xmKip-V6u-mIzexa-q5XwCnlv8BlkIC5WERkieUz5UMnf8.AmLn5jXxczaKkoYGeVe8RlLw_JXsYD3xizuvypgGieQ&dib_tag=se&keywords=50mm+heatsink&qid=1780715217&sprefix=50mm+heatsin%2Caps%2C735&sr=8-2
+the fan -- MF50101V1-1000U-A99, or any 50mm fan that runs with the supply voltage most convenient for you
+
+the driver -- XY12522, possibly also known as XY6020L?
+https://www.amazon.com/dp/B0D9LB3YQN?ref=ppx_yo2ov_dt_b_fed_asin_title
+
+the LED/diode -- LMP LHP73B on 40MM MCPCB
+https://convoylight.com/products/lmp-lhp73b?data_from=app_searchbox&spm=app_searchbox.lmp.products.1.
+
+reflector -- Orange peel aluminium reflector for XHP70
+https://kaidomain.com/39_5mm-x-31_2mm-SMO-or-OP-Aluminum-Reflector-for-XHP70?search=S028220
+
+reflector diode electrical isolation -- 7070 LED gasket
+https://convoylight.com/products/11mm-7070-gasket?data_from=app_searchbox&spm=search_detail.gasket%207070.search_detail-2134598.1.
+
+collimation lens -- chanzn LED lens optical glass (44mm, 60deg)
+https://www.amazon.com/Chanzon-60degree-Reflector-Collimator-Houseing/dp/B06XKV9PWY/ref=sr_1_5_sspa?crid=1F7BG87JM94ZO&dib=eyJ2IjoiMSJ9.-76XIiRgF2cHr83IGhgH3l0Oi2a3--XNp-ESO_CICsqOiQrpj_MQwlI8SLuDhzqBjMDFIvmy8iw3BqV8xAUTbh0uHLT4yr_817aMjQpczhiM_uqVExd958bSXAxYMF0EPIVOEvgaIWB-ib7EAU4QylM_MMU51qv3vGOeYz7gJvo0p2T-B7N8BIvONYI1cMOnWX4hd524r41mT3S7xutKF0v3gTFzuFedkSBfLGALPmU._qnShzheIwu4eBY1NIVNwQWCaqjCF66q7aV-YNCQ_W8&dib_tag=se&keywords=collimation+lens&qid=1780715747&sprefix=collimation+l%2Caps%2C196&sr=8-5-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1
+
+
+also just to be clear youre working with some pretty gnarly currents and voltages, and i am not responsible for any injury to yourself or others that occurs in relation to any part of this list/reccomendation
+additionally the lamp creates a very strong beam... LEDS do get very hot (the energy has to go somewhere) so be careful. and use the highest gauge wiring you can work with ! 
+
+And the fan is absolutely necessary, unless you want to run the diode at a lower current. Even still, a cool LED is a happy LED :-]
